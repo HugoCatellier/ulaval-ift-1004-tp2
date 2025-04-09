@@ -2,6 +2,7 @@ from random import shuffle
 
 from personnages import CARACTERISTIQUES
 
+from copy import deepcopy
 
 def types_caracteristiques_ordre_aleatoire():
     """
@@ -17,7 +18,15 @@ def types_caracteristiques_ordre_aleatoire():
     Returns:
         list: La liste des types de caractéristiques.
     """
-    # TODO: VOTRE CODE ICI
+    
+    # Récupérer une liste contennant uniquement les clefs du dictionnaire de caractéristiques
+    clefs_caracteristiques = list(CARACTERISTIQUES.keys())
+
+    # Mélanger l'ordre de la liste des clefs
+    shuffle(clefs_caracteristiques)
+
+    # Retourner la liste
+    return clefs_caracteristiques
 
 
 def valeurs_ordre_aleatoire(type_caracteristique):
