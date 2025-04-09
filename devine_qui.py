@@ -22,11 +22,8 @@ def types_caracteristiques_ordre_aleatoire():
     # Récupérer une liste contennant uniquement les clefs du dictionnaire de caractéristiques
     clefs_caracteristiques = list(CARACTERISTIQUES.keys())
 
-    # Mélanger l'ordre de la liste des clefs
-    shuffle(clefs_caracteristiques)
-
-    # Retourner la liste
-    return clefs_caracteristiques
+    # Mélanger et retourner la liste
+    return shuffle(clefs_caracteristiques)
 
 
 def valeurs_ordre_aleatoire(type_caracteristique):
@@ -44,7 +41,12 @@ def valeurs_ordre_aleatoire(type_caracteristique):
     Returns:
         list: La liste des valeurs possibles pour ce type de caractéristique.
     """
-    # TODO: VOTRE CODE ICI
+    
+    # Récupérer et copier la liste des valeurs du type de caractéristique
+    valeurs_caracteristiques = CARACTERISTIQUES[type_caracteristique].copy()
+
+    # Mélanger et retourner la liste
+    return shuffle(valeurs_caracteristiques)
 
 
 def possede(donnees_personnage, type_caracteristique, valeur_caracteristique):
